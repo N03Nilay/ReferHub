@@ -1,0 +1,12 @@
+.navbar{
+    background: wheat;
+}
+.nav-list{
+    display: flex;
+}
+.nav-options{
+    display: flex;
+    width: 15rem;
+    margin-left: 55rem;
+    justify-content: space-around;
+}

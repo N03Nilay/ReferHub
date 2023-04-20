@@ -1,0 +1,120 @@
+
+.left-main{
+    position: absolute;
+    z-index: 2;
+    width: 84.3rem;
+}
+
+.left-main-p1{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 800;
+font-size: 2.9rem;
+line-height: 2.875rem;
+text-align: center;
+color: #232E74;
+margin-top: 1rem;
+}
+.left-main-p2{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 1.625rem;
+line-height: 1.438rem;
+text-align: center;
+color: #232E74;
+
+margin-top: -1rem;
+}
+.left-main-btn{
+    display: flex;
+    margin-left: 25rem;
+    margin-top: 2rem;
+}
+.left-main-btn button{
+    height: 3.438rem;
+    width: 13.278rem;
+    border-radius: 40px;
+    border: none;
+    margin-left: 3rem;
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 1.3rem;
+letter-spacing: 0.03rem;
+line-height: 1.375rem;
+color: white;
+background: linear-gradient(180deg, #0038FF -7.52%, #001560 91.61%);
+}
+.left-main-btn button:hover{
+    cursor: pointer;
+}
+.main-right{
+    /* margin-top: -5rem;
+    z-index: -10; */
+    position: relative;
+    margin-top: 5rem;
+}
+.main-right img{
+    opacity: 0.3;   
+    width: 84.3rem;
+    height: 34.5rem;
+    margin-top: -5rem;
+}
+.down-arrow{
+    height: 3rem;
+    width: 3rem;
+    margin-top: 3rem;
+    margin-left: 41rem;
+}
+.why-referhub{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 43px;
+line-height: 52px;
+text-align: center;
+}
+.box1{
+    display: flex;
+    padding: 2rem;
+    padding-left: 5rem;
+}
+.box1-left-img{
+    height: 25rem;
+    width: 30rem;
+}
+.box1-right{
+    margin-top: 0rem;
+    width: 35rem;
+    text-align: left;
+    margin-left: 6rem;
+}
+.box1-right-p1{
+    color: #1565a7;
+    font-size: 2.7rem;
+}
+.box1-right-p2{
+    font-size: 1.5rem;
+    color: #6b90a8;
+}
+.faq1{
+    margin-left: 8.5rem;
+    width: 70rem;
+}
+.faq-ques1 p{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.faq-ans1 p{
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+.plus-minus-faq-icon{
+    margin-top: 1.5rem;
+    margin-left: 40rem;
+}
+.plus-minus-faq-icon:hover{
+    cursor: pointer;
+}
+

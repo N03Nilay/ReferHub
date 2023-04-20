@@ -1,0 +1,75 @@
+.navbar{
+    width: 94rem;
+    display: flex;
+    justify-content:space-between;
+    padding-top: 0.5rem;
+    background: #232E74;
+    z-index: 20;
+    position: fixed;
+  top:0;
+  right: 0;
+  left: 0;
+  padding-right: 2rem;
+}
+.logo img{
+    height: 1.8rem;
+    width: 10rem;
+    margin-top: 0.8rem;
+   margin-left: 1rem;
+}
+.nav-options{
+    margin-right: 5rem;
+    width: 50rem;
+    
+}
+.nav-options ul{
+    display: flex;
+    flex-direction: row;
+   
+}
+.nav-options ul li{
+    list-style: none;
+       font-size: 1.5rem;
+       margin-left: 2rem;
+    /* color: white; */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+}
+.check1,.check-login{
+    color: white;
+}
+.check1:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration: overline;
+}
+.check-login:hover{
+    cursor: pointer;
+}
+.check-register{
+    background: white;
+    color: #232E74;
+}
+.check-register:hover{
+    cursor: pointer;
+    background: #232E74;
+    color: white;
+}
+/* @media screen and (max-width: 330px) {
+    .navbar{
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    .nav-options ul{
+        flex-direction: column;
+        justify-content: space-around;
+      }
+      .nav-options ul li{
+        margin-top: 0.5rem;
+      }
+      .check-login , .check-register{
+        width: 6rem;
+      }
+
+  } */
