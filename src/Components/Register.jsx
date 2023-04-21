@@ -12,7 +12,7 @@ const initialValues = {
     role_id: "",
   };
 
-const Check = () => {
+const Register = () => {
     const [captcha,setcaptcha] = useState(false);
   const [user, setUser] = useState({});
   const {values,errors,touched,handleBlur,handleChange,handleSubmit} = useFormik({
@@ -128,4 +128,4 @@ else{
   )
 }
 
-export default Check
+export default Register

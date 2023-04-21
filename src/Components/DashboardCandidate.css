@@ -1,5 +1,5 @@
 .navbar{
-    background: wheat;
+    background: rgb(245, 226, 191);
 }
 .nav-list{
     display: flex;
@@ -9,4 +9,37 @@
     width: 15rem;
     margin-left: 55rem;
     justify-content: space-around;
+}
+.logo{
+    margin-top: -0.5rem;
+}
+.nav-options-list img:hover{
+    cursor: pointer;
+}
+.filters{
+    display: flex;
+    justify-content: space-around;
+}
+.all-opt-filter p , .location-filter-head,.domain-filter-head,.company-filter-head{
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    width: 15rem;
+    padding: 0.35rem;
+    text-align: center;
+    font-weight: 500;
+}
+.location-list,.domain-list,.company-list{
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+}
+.apply-btn button{
+    height: 2.2rem;
+    width: 7rem;
+    font-size: 1.1rem;
+    background: #9adcf7;
+    border: none;
+    border-radius: 10px;
+    margin-top: 1.2rem;
 }

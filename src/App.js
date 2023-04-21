@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import HomePage from './Components/HomePage';
-import Check from './Components/Check';
+import Register from './Components/Register';
+import Login from './Components/Login';
 import DashboardCandidate from './Components/DashboardCandidate';
 
 function App() {
