@@ -9,7 +9,7 @@ const city = [{
 },
 {
     id: 3,
-    city: "Mumbai"
+    city: "Thiruvanthapuram"
 }
 ];
 export default city;

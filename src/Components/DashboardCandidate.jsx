@@ -14,7 +14,7 @@ var config = {
 }
 
 const DashboardCandidate = () => {
-    const [dataOfEachInvestor,setdataOfEachInvestor] = useState([])
+    const [dataOfEachComp,setdataOfEachComp] = useState([])
     const [showLocationList,setshowLocationList] = useState(0);
     const [stateName,setstateName] = useState("")
     const [showDomainList,setshowDomainList] = useState(0);
@@ -41,38 +41,24 @@ const DashboardCandidate = () => {
             </div>
         </div>
         <div className="filters" style={{marginTop:"4rem"}}>
-            {/* <button onClick={() => {
-                console.log(accessToken)
-                axios.get("https://refer-hub.onrender.com/api/referral/getreferral?location=Delhi&company=Google&domain=Backend%20developer" , config)
-                .then((res) => {
-                    console.log(res)
-                    console.log(config)
-                    // setdataOfEachInvestor(res.data)
-                    // console.log(res.data[1].experience)
-                    // setLoading(true);
-                    // console.log(res)
-                })
-                .catch((err) => {
-                    console.log(err)
-                    console.log(config)
-                })
-            }}>frontend</button> */}
             <div className="all-opt-filter">
-                <p>All</p>
+                <p><i>All</i></p>
             </div>
             <div className="location-filter">
                 <div style={{display:"flex"}}>
-            <div>{(stateName === "")?(<p className='location-filter-head'>Location</p>) : (<p className='location-filter-head'>{stateName}</p>)}</div>
-            <div> {(showLocationList === 0) ? (<img src="free-arrow-down-icon-3101-thumb-removebg-preview.png" height="19rem" width="19rem" alt=""style={{marginTop:"2.0rem",marginLeft:"-2rem"}} onClick={() => {
+            <div>{(stateName === "")?(<p className='location-filter-head'><i>Location</i></p>) : (<p className='location-filter-head'>{stateName}</p>)}</div>
+            <div> {(showLocationList === 0) ? (<img className='upward-arrow' src="free-arrow-down-icon-3101-thumb-removebg-preview.png" height="19rem" width="19rem" alt="" style={{marginTop:"2.0rem",marginLeft:"-2rem"}} onClick={() => {
                 setshowLocationList(1)
-            }} />) :(<img src="358-3582348_angle-brackets-thin-up-brackets-code-icon-swipe-up-arrow-removebg-preview.png" height="15rem" width="45rem" alt=""style={{marginTop:"2.0rem",marginLeft:"-3rem"}} onClick={() => {
+                setshowDomainList(0)
+                setshowCompanyList(0);
+            }} />) :(<img className='downward-arrow' src="358-3582348_angle-brackets-thin-up-brackets-code-icon-swipe-up-arrow-removebg-preview.png" height="15rem" width="45rem" alt=""style={{marginTop:"2.0rem",marginLeft:"-3rem"}} onClick={() => {
                 setshowLocationList(0)
             }}  />)}</div>
             </div>
             {(showLocationList === 1) ? (<div className="location-list">
             {city?.map((item) => (
             <div key={item.id}>
-              <p style={{textAlign:"center",fontSize:"1.3rem"}} onClick={() => {
+              <p className='loc-comp-dom-name' style={{textAlign:"center",fontSize:"1.3rem"}} onClick={() => {
                 setstateName(item.city)
               }}>{item.city}</p>
             </div>
@@ -83,17 +69,20 @@ const DashboardCandidate = () => {
 
             <div className="domain-filter">
                 <div style={{display:"flex"}}>
-            <div>{(domainName === "")?(<p className='domain-filter-head'>Domain</p>) : (<p className='domain-filter-head'>{domainName}</p>)}</div>
-            <div> {(showDomainList === 0) ? (<img src="free-arrow-down-icon-3101-thumb-removebg-preview.png" height="19rem" width="19rem" alt=""style={{marginTop:"2.0rem",marginLeft:"-2rem"}} onClick={() => {
+            <div>{(domainName === "")?(<p className='domain-filter-head'><i>Domain</i></p>) : (<p className='domain-filter-head'>{domainName}</p>)}</div>
+            <div> {(showDomainList === 0) ? (<img className='upward-arrow' src="free-arrow-down-icon-3101-thumb-removebg-preview.png" height="19rem" width="19rem" alt=""style={{marginTop:"2.0rem",marginLeft:"-2rem"}} onClick={() => {
                 setshowDomainList(1)
-            }} />) :(<img src="358-3582348_angle-brackets-thin-up-brackets-code-icon-swipe-up-arrow-removebg-preview.png" height="15rem" width="45rem" alt=""style={{marginTop:"2.0rem",marginLeft:"-3rem"}} onClick={() => {
+                setshowLocationList(0)
+                setshowCompanyList(0);
+            }} />) :(<img className='downward-arrow' src="358-3582348_angle-brackets-thin-up-brackets-code-icon-swipe-up-arrow-removebg-preview.png" height="15rem" width="45rem" alt=""style={{marginTop:"2.0rem",marginLeft:"-3rem"}} onClick={() => {
                 setshowDomainList(0)
+                
             }}  />)}</div>
             </div>
             {(showDomainList === 1) ? (<div className="domain-list">
             {domain?.map((item) => (
             <div key={item.id}>
-              <p style={{textAlign:"center",fontSize:"1.3rem"}} onClick={() => {
+              <p className='loc-comp-dom-name' style={{textAlign:"center",fontSize:"1.3rem"}} onClick={() => {
                 setdomainName(item.domain)
               }}>{item.domain}</p>
             </div>
@@ -104,17 +93,20 @@ const DashboardCandidate = () => {
 
             <div className="company-filter">
                 <div style={{display:"flex"}}>
-            <div>{(companyName === "")?(<p className='company-filter-head'>Company</p>) : (<p className='company-filter-head'>{companyName}</p>)}</div>
-            <div> {(showCompanyList === 0) ? (<img src="free-arrow-down-icon-3101-thumb-removebg-preview.png" height="19rem" width="19rem" alt=""style={{marginTop:"2.0rem",marginLeft:"-2rem"}} onClick={() => {
+            <div>{(companyName === "")?(<p className='company-filter-head'><i>Company</i></p>) : (<p className='company-filter-head'>{companyName}</p>)}</div>
+            <div> {(showCompanyList === 0) ? (<img className='upward-arrow' src="free-arrow-down-icon-3101-thumb-removebg-preview.png" height="19rem" width="19rem" alt=""style={{marginTop:"2.0rem",marginLeft:"-2rem"}} onClick={() => {
                 setshowCompanyList(1)
-            }} />) :(<img src="358-3582348_angle-brackets-thin-up-brackets-code-icon-swipe-up-arrow-removebg-preview.png" height="15rem" width="45rem" alt=""style={{marginTop:"2.0rem",marginLeft:"-3rem"}} onClick={() => {
+                setshowDomainList(0)
+                setshowLocationList(0)
+                
+            }} />) :(<img className='downward-arrow' src="358-3582348_angle-brackets-thin-up-brackets-code-icon-swipe-up-arrow-removebg-preview.png" height="15rem" width="45rem" alt=""style={{marginTop:"2.0rem",marginLeft:"-3rem"}} onClick={() => {
                 setshowCompanyList(0)
             }}  />)}</div>
             </div>
             {(showCompanyList === 1) ? (<div className="company-list">
             {company?.map((item) => (
             <div key={item.id}>
-              <p style={{fontSize:"1.3rem"}} onClick={() => {
+              <p className='loc-comp-dom-name' style={{fontSize:"1.3rem"}} onClick={() => {
                 setcompanyName(item.company)
               }}>{item.company}</p>
             </div>
@@ -125,18 +117,14 @@ const DashboardCandidate = () => {
 
             <div className="apply-btn">
                 <button onClick={() => {
-                    const check = {
-                        location:"Delhi",
-                        company:"Google",
-                        domain:"Backend developer"
-
-                    }
+                    
                 console.log(accessToken)
-                axios.get("https://refer-hub.onrender.com/api/referral/getreferral?"+check , config)
+                const newDomainname = domainName.split(" ")
+                axios.get(`https://refer-hub.onrender.com/api/referral/getreferral?location=${stateName}&company=${companyName}&domain=${newDomainname[0]}%20${newDomainname[1]}` , config)
                 .then((res) => {
                     console.log(res)
                     console.log(config)
-                    // setdataOfEachInvestor(res.data)
+                    setdataOfEachComp(res.data.referrals)
                     // console.log(res.data[1].experience)
                     // setLoading(true);
                     // console.log(res)
@@ -149,6 +137,49 @@ const DashboardCandidate = () => {
             </div>
         </div>
         <div className="main-cards" style={{zIndex:"0"}}>
+            <h1>Your Best Job Referrals</h1>
+            {dataOfEachComp?.map((item,index) => {
+                return(
+            <div className="ind-card" key={item._id}>
+                <div className="ind-card-flex">
+                <div className="left-card">
+                    <div className="logo-left">
+                    <img src="963312-200-removebg-preview.png" alt="" height="25rem" width="25rem"/>
+                    </div>
+                    <div className="domain-name">
+                    <p>{item.domain}</p>
+                    </div>
+
+                </div>
+                <div className="centre-card">
+                <div className="logo-centre">
+                <img src="4440484-removebg-preview.png" alt="" height="25rem" width="25rem"/>
+                </div>
+                <div className="company-name">
+                <p>{item.company}</p>
+                </div>
+
+                </div>
+                <div className="right-card">
+                <div className="logo-right">
+                <img src="3-35037_transparent-location-logo-png-png-download-removebg-preview.png" alt="" height="25rem" width="25rem"/>
+
+                </div>
+                <div className="location-name">
+                <p>{item.location},India</p>
+                </div>
+
+                </div>
+                </div>
+                <div className="job-desc">
+                <p>{item.job_description}</p>
+                </div>
+                <div className="apply-job-btn">
+                    <button>Apply Here</button>
+                </div>
+            </div>
+            )})}
+
             
         </div>
     </div>

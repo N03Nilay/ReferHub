@@ -9,7 +9,7 @@ const domain = [{
 },
 {
     id: 3,
-    domain: "Designer"
+    domain: "Machine Learning"
 }
 ];
 export default domain;
