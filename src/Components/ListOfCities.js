@@ -10,6 +10,10 @@ const city = [{
 {
     id: 3,
     city: "Thiruvanthapuram"
+},
+{
+    id: 4,
+    city: "Clear"
 }
 ];
 export default city;

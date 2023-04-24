@@ -4,6 +4,7 @@ import {useFormik} from "formik";
 // import { Link } from 'react-router-dom';
 
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const initialValues = {
     email: "",
@@ -14,6 +15,7 @@ const initialValues = {
   var accessToken = "";
 
 const Login = () => {
+  const navigate = useNavigate();
     const [captcha,setcaptcha] = useState(false);
   const [user, setUser] = useState({});
   const {values,errors,touched,handleBlur,handleChange,handleSubmit} = useFormik({
@@ -63,6 +65,7 @@ else{
             accessToken = res.data.token;
           localStorage.setItem("access token" , accessToken )
             alert("Logged in done")
+            navigate('/DashboardCandidate')
         }
         else
         alert("failed")

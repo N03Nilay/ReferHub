@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import './HomePage.css'
 import Navbar from './Navbar';
+import { useNavigate } from 'react-router-dom';
 const HomePage = () => {
     const [show1,setShow1] = useState(false);
     const [show2,setShow2] = useState(false);
     const [show3,setShow3] = useState(false);
     const [show4,setShow4] = useState(false);
     const [show5,setShow5] = useState(false);
-   
+   const navigate = useNavigate();
   return (
     <div>
         <Navbar />
@@ -19,7 +20,9 @@ const HomePage = () => {
                     <button>Read More</button>
                     
                     
-                    <button>Register Now</button>
+                    <button onClick={() => {
+                        navigate('/register')
+                    }}>Register Now</button>
                     
                 </div>
                 <img className='down-arrow' src="Vector.png" alt="" />
@@ -77,7 +80,7 @@ const HomePage = () => {
                 <div className="box1-right" style={{marginLeft:"1rem"}}>
                         <h1 className="box1-right-p1">Earn rewards for your referrals:</h1>
                         <p className="box1-right-p2">When you refer a friend or colleague for a job opening, you'll receive a reward if they get hired. It's a win-win situation!
-</p>
+                </p>
                         
                     </div>
                     <div className="box1-left" style={{marginLeft:"6rem"}}>

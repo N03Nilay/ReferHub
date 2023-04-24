@@ -1,0 +1,55 @@
+.only-ques{
+    display: flex;
+    justify-content: space-between;
+}
+.only-ques div p{
+    font-size: 2.4rem;
+    margin-top: -0.25rem;
+    margin-left: 4rem;
+}
+.next-btn{
+    width: 8rem;
+    height: 3rem;
+    font-size: 1.4rem;
+    background: white;
+    color: rgb(177, 177, 247);
+    border: 2px solid rgb(177, 177, 247);
+    border-radius: 10px;
+    margin-right: 4rem;
+}
+.each-ques{
+    border: 2px solid rgb(173, 167, 167);
+    border-radius: 15px;
+    width: 78rem;
+    margin-left: 2.5rem;
+   
+}
+.all-ans{
+    margin-top: -1rem;
+    margin-left: 2rem;
+}
+.each-ans{
+    font-size: 1.4rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    background: white;
+    color: rgb(216, 156, 44);
+    border-radius: 10px;
+    text-align: center;
+    padding: 0.5rem;
+    padding-top: 0.8rem;
+    width: 15rem;
+    height: 6rem;
+    border: 2px solid rgb(216, 156, 44);
+    
+}
+.each-ans:hover{
+    cursor: pointer;
+    background: rgb(216, 156, 44);
+    color: white;
+}
+.all-ans{
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -21,14 +21,31 @@ const DashboardCandidate = () => {
     const [domainName,setdomainName] = useState("")
     const [showCompanyList,setshowCompanyList] = useState(0);
     const [companyName,setcompanyName] = useState("")
+    const [selectAll,setselectAll] = useState(0)
+
+    useEffect(() => {
+        axios.get(`https://refer-hub.onrender.com/api/referral/getreferral` , config)
+                .then((res) => {
+                    console.log(res)
+                    console.log(config)
+                    setdataOfEachComp(res.data.referrals)
+                    // console.log(res.data[1].experience)
+                    // setLoading(true);
+                    // console.log(res)
+                })
+                .catch((err) => {
+                    console.log(err)
+                    console.log(config)
+                })
+    },[])
   return (
     <div>
-        <div className="navbar">
+        <div className="Dash-navbar">
             <div className="nav-list">
-                <div className="logo">
+                <div className="Dash-logo">
                     <img src="ReferHub (1).png" alt="" />
                 </div>
-                <div className="nav-options">
+                <div className="Dash-nav-options">
                     <div className="nav-options-list">
                         <img src="icon-of-blank-message-dialogue-box-free-vector-removebg-preview.png" height="40rem" width="40rem" alt=""style={{}} /></div>
                     <div className="nav-options-list">
@@ -42,7 +59,9 @@ const DashboardCandidate = () => {
         </div>
         <div className="filters" style={{marginTop:"4rem"}}>
             <div className="all-opt-filter">
-                <p><i>All</i></p>
+                <p onClick={() => {
+                    setselectAll(1)
+                }}><i>All</i></p>
             </div>
             <div className="location-filter">
                 <div style={{display:"flex"}}>
@@ -58,9 +77,14 @@ const DashboardCandidate = () => {
             {(showLocationList === 1) ? (<div className="location-list">
             {city?.map((item) => (
             <div key={item.id}>
-              <p className='loc-comp-dom-name' style={{textAlign:"center",fontSize:"1.3rem"}} onClick={() => {
+                {(item.city !== "Clear") ? 
+              (<p className='loc-comp-dom-name' style={{textAlign:"center",fontSize:"1.3rem"}} onClick={() => {
                 setstateName(item.city)
-              }}>{item.city}</p>
+                setshowLocationList(0)
+              }}>{item.city}</p>) : (<p className='loc-comp-dom-name' style={{textAlign:"center",fontSize:"1.3rem"}} onClick={() => {
+                setstateName("")
+                setshowLocationList(0)
+              }}>{item.city}</p>)}
             </div>
           ))}
             </div>) : (<></>)}
@@ -82,9 +106,13 @@ const DashboardCandidate = () => {
             {(showDomainList === 1) ? (<div className="domain-list">
             {domain?.map((item) => (
             <div key={item.id}>
-              <p className='loc-comp-dom-name' style={{textAlign:"center",fontSize:"1.3rem"}} onClick={() => {
+              {(item.domain !== "Clear") ? (<p className='loc-comp-dom-name' style={{textAlign:"center",fontSize:"1.3rem"}} onClick={() => {
                 setdomainName(item.domain)
-              }}>{item.domain}</p>
+                setshowDomainList(0)
+              }}>{item.domain}</p>) : (<p className='loc-comp-dom-name' style={{textAlign:"center",fontSize:"1.3rem"}} onClick={() => {
+                setdomainName("")
+                setshowDomainList(0)
+              }}>{item.domain}</p>)}
             </div>
           ))}
             </div>) : (<></>)}
@@ -106,9 +134,13 @@ const DashboardCandidate = () => {
             {(showCompanyList === 1) ? (<div className="company-list">
             {company?.map((item) => (
             <div key={item.id}>
-              <p className='loc-comp-dom-name' style={{fontSize:"1.3rem"}} onClick={() => {
+              {(item.company !== "Clear") ? (<p className='loc-comp-dom-name' style={{fontSize:"1.3rem"}} onClick={() => {
                 setcompanyName(item.company)
-              }}>{item.company}</p>
+                setshowCompanyList(0)
+              }}>{item.company}</p>) : (<p className='loc-comp-dom-name' style={{fontSize:"1.3rem"}} onClick={() => {
+                setcompanyName("")
+                setshowCompanyList(0)
+              }}>{item.company}</p>)}
             </div>
           ))}
             </div>) : (<></>)}
@@ -120,6 +152,119 @@ const DashboardCandidate = () => {
                     
                 console.log(accessToken)
                 const newDomainname = domainName.split(" ")
+                if(stateName === "" && companyName=== "" && domainName=== "")
+                {
+                    axios.get(`https://refer-hub.onrender.com/api/referral/getreferral` , config)
+                .then((res) => {
+                    console.log(res)
+                    console.log(config)
+                    setdataOfEachComp(res.data.referrals)
+                    // console.log(res.data[1].experience)
+                    // setLoading(true);
+                    // console.log(res)
+                })
+                .catch((err) => {
+                    console.log(err)
+                    console.log(config)
+                })
+
+                }
+                else if(stateName !== "" && companyName=== "" && domainName=== ""){
+                    axios.get(`https://refer-hub.onrender.com/api/referral/getreferral?location=${stateName}` , config)
+                .then((res) => {
+                    console.log(res)
+                    console.log(config)
+                    setdataOfEachComp(res.data.referrals)
+                    // console.log(res.data[1].experience)
+                    // setLoading(true);
+                    // console.log(res)
+                })
+                .catch((err) => {
+                    console.log(err)
+                    console.log(config)
+                })
+                }
+                else if(stateName === "" && companyName !== "" && domainName=== "")
+                {
+                    axios.get(`https://refer-hub.onrender.com/api/referral/getreferral?company=${companyName}` , config)
+                    .then((res) => {
+                        console.log(res)
+                        console.log(config)
+                        setdataOfEachComp(res.data.referrals)
+                        // console.log(res.data[1].experience)
+                        // setLoading(true);
+                        // console.log(res)
+                    })
+                    .catch((err) => {
+                        console.log(err)
+                        console.log(config)
+                    }) 
+                }
+                else if(stateName === "" && companyName === "" && domainName !== "")
+                {
+                    axios.get(`https://refer-hub.onrender.com/api/referral/getreferral?domain=${newDomainname[0]}%20${newDomainname[1]}` , config)
+                    .then((res) => {
+                        console.log(res)
+                        console.log(config)
+                        setdataOfEachComp(res.data.referrals)
+                        // console.log(res.data[1].experience)
+                        // setLoading(true);
+                        // console.log(res)
+                    })
+                    .catch((err) => {
+                        console.log(err)
+                        console.log(config)
+                    }) 
+                }
+                else if(stateName === "" && companyName !== "" && domainName !== "")
+                {
+                    axios.get(`https://refer-hub.onrender.com/api/referral/getreferral?company=${companyName}&domain=${newDomainname[0]}%20${newDomainname[1]}` , config)
+                    .then((res) => {
+                        console.log(res)
+                        console.log(config)
+                        setdataOfEachComp(res.data.referrals)
+                        // console.log(res.data[1].experience)
+                        // setLoading(true);
+                        // console.log(res)
+                    })
+                    .catch((err) => {
+                        console.log(err)
+                        console.log(config)
+                    }) 
+                }
+                else if(stateName !== "" && companyName !== "" && domainName === "")
+                {
+                    axios.get(`https://refer-hub.onrender.com/api/referral/getreferral?company=${companyName}&location=${stateName}` , config)
+                    .then((res) => {
+                        console.log(res)
+                        console.log(config)
+                        setdataOfEachComp(res.data.referrals)
+                        // console.log(res.data[1].experience)
+                        // setLoading(true);
+                        // console.log(res)
+                    })
+                    .catch((err) => {
+                        console.log(err)
+                        console.log(config)
+                    }) 
+                }
+                else if(stateName !== "" && companyName === "" && domainName !== "")
+                {
+                    axios.get(`https://refer-hub.onrender.com/api/referral/getreferral?domain=${newDomainname[0]}%20${newDomainname[1]}&location=${stateName}` , config)
+                    .then((res) => {
+                        console.log(res)
+                        console.log(config)
+                        setdataOfEachComp(res.data.referrals)
+                        // console.log(res.data[1].experience)
+                        // setLoading(true);
+                        // console.log(res)
+                    })
+                    .catch((err) => {
+                        console.log(err)
+                        console.log(config)
+                    }) 
+                }
+                else{
                 axios.get(`https://refer-hub.onrender.com/api/referral/getreferral?location=${stateName}&company=${companyName}&domain=${newDomainname[0]}%20${newDomainname[1]}` , config)
                 .then((res) => {
                     console.log(res)
@@ -133,6 +278,7 @@ const DashboardCandidate = () => {
                     console.log(err)
                     console.log(config)
                 })
+            }
             }}>Apply</button>
             </div>
         </div>

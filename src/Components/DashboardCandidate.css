@@ -1,17 +1,18 @@
-.navbar{
+.Dash-navbar{
     background: rgb(245, 226, 191);
 }
 .nav-list{
     display: flex;
 }
-.nav-options{
+.Dash-nav-options{
     display: flex;
     width: 15rem;
     margin-left: 55rem;
     justify-content: space-around;
 }
-.logo{
-    margin-top: -0.5rem;
+.Dash-logo{
+    margin-top: 0.5rem;
+    margin-left: 2rem;
 }
 .nav-options-list img:hover{
     cursor: pointer;
@@ -37,6 +38,12 @@
     color:black;
     background: wheat;
     border-radius: 10px;
+}
+.all-opt-filter p:hover{
+    cursor: pointer;
+    background: #585757;
+    color: white;
+
 }
 .apply-btn button{
     height: 2.7rem;

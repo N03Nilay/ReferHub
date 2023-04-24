@@ -14,6 +14,10 @@ const company = [{
 {
     id: 4,
     company: "TCS"
+},
+{
+    id: 4,
+    company: "Clear"
 }
 ];
 export default company;

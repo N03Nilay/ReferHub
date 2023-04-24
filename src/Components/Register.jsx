@@ -4,6 +4,7 @@ import {useFormik} from "formik";
 // import { Link } from 'react-router-dom';
 
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const initialValues = {
     email: "",
@@ -13,6 +14,7 @@ const initialValues = {
   };
 
 const Register = () => {
+  const navigate = useNavigate();
     const [captcha,setcaptcha] = useState(false);
   const [user, setUser] = useState({});
   const {values,errors,touched,handleBlur,handleChange,handleSubmit} = useFormik({
@@ -67,6 +69,7 @@ else{
         if(res.status === 200)
         {
             alert("Registration done")
+            navigate('/login')
         }
         else
         alert("Registration failed")
