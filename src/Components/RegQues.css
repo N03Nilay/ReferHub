@@ -17,39 +17,45 @@
     border-radius: 10px;
     margin-right: 4rem;
 }
-.each-ques{
+.next-btn:hover{
+    cursor: pointer;
+    background: rgb(177, 177, 247);
+    color: white;
+
+}
+.eachQues-reg{
+    margin-top: 0rem;
     border: 2px solid rgb(173, 167, 167);
+    width: 70rem;
+    margin-left: 4rem;
     border-radius: 15px;
-    width: 78rem;
-    margin-left: 2.5rem;
-   
+    padding-bottom: 2rem;
+    padding-right: 1rem;
 }
-.all-ans{
+.ques-reg{
+    font-size: 2rem;
+    margin-left: 2rem;
     margin-top: -1rem;
-    margin-left: 2rem;
 }
-.each-ans{
-    font-size: 1.4rem;
-    margin-left: 2rem;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    background: white;
-    color: rgb(216, 156, 44);
-    border-radius: 10px;
-    text-align: center;
-    padding: 0.5rem;
-    padding-top: 0.8rem;
-    width: 15rem;
-    height: 6rem;
+.ans-reg{
+    font-size: 1.7rem;
     border: 2px solid rgb(216, 156, 44);
-    
+    color: rgb(216, 156, 44);
+    width: 15rem;
+    height: 7rem;
+    text-align: center;
+    border-radius: 10px;
+    padding-top: 0.5rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
 }
-.each-ans:hover{
+.ans-reg:hover{
     cursor: pointer;
     background: rgb(216, 156, 44);
     color: white;
 }
-.all-ans{
+.all-ans-reg{
     display: flex;
     flex-wrap: wrap;
+    margin-left: 2rem;
 }
