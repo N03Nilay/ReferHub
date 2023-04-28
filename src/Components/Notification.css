@@ -1,0 +1,17 @@
+.main-notification{
+    background: rgb(222, 248, 247);
+    width: 60rem;
+    margin-left: 10rem;
+    margin-top: 1rem;
+    border-radius: 20px;
+}
+.each-notification{
+    padding: 0.1rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+.each-notification:hover{
+    background: rgb(181, 248, 246);
+    cursor: pointer;
+    border-radius: 20px;
+}

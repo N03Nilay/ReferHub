@@ -3,10 +3,24 @@ import city from './ListOfCities';
 import company from './ListOfCompany';
 import domain from './ListOfDomain';
 import experience from './ListOfExperience';
+import axios from 'axios';
 import './RegQues.css'
+
+const accessToken = localStorage.getItem("access token");
+// console.log(accessToken)
+var config = {
+    headers:{
+        Authorization: `Bearer ${accessToken}`
+    }
+}
+
 
 const RegQues = () => {
     const [countNext,setcountNext] = useState(0);
+    const [arrayOfDomain , setarrayOfDomain] = useState([])
+    const [arrayOfLocation , setarrayOfLocation] = useState([])
+    const [arrayOfExperience , setarrayOfExperience] = useState([])
+    const [arrayOfCompany , setarrayOfCompany] = useState([])
   return (
     <div>
         <div className="Dash-navbar">
@@ -32,6 +46,36 @@ const RegQues = () => {
             <div>
                 <button className='next-btn' onClick={() => {
                     setcountNext(countNext+1)
+                    if(countNext === 3)
+                    {
+                        // console.log(arrayOfCompany)
+                        // console.log(arrayOfDomain)
+                        // console.log(arrayOfLocation)
+                        // console.log(arrayOfExperience)
+                        const passValue = {
+                            domain: arrayOfDomain,
+                            companies: arrayOfCompany,
+                            location:arrayOfLocation,
+                            minExp:0,
+                            maxExp:2,
+                          }
+                          axios.post("https://refer-hub.onrender.com/api/candidate/profileques", passValue , config)
+                          .then((res) => {
+                            if(res.status === 200)
+                            {
+                                console.log(res);
+                                accessToken = res.data.token;
+                              localStorage.setItem("access token" , accessToken )
+                                alert("Pass value")
+                                
+                            }
+                            else
+                            alert("failed")
+                          }).catch((err) => {
+                            console.log(err)
+                          })
+                    
+                    }
                 }}>Next</button>
             </div>
             </div>
@@ -42,7 +86,10 @@ const RegQues = () => {
                     </div>
                     <div className='all-ans-reg'>
                     {domain?.map((item) => ( 
-                    (item.domain !== "Clear") ? (<div className="ans-reg">
+                    (item.domain !== "Clear") ? (<div className="ans-reg" onClick={() => {
+                        setarrayOfDomain(oldArray => [...oldArray, item.domain]);
+                        console.log(arrayOfDomain)
+                    }}>
                         <p>{item.domain}</p>
                     </div>) : (<></>)))}
                    
@@ -53,7 +100,10 @@ const RegQues = () => {
                     </div>
                     <div className='all-ans-reg'>
                     {city?.map((item) => ( 
-                    (item.city !== "Clear") ? (<div className="ans-reg">
+                    (item.city !== "Clear") ? (<div className="ans-reg" onClick={() => {
+                        setarrayOfLocation(oldArray => [...oldArray, item.city]);
+                        console.log(arrayOfLocation)
+                    }}>
                         <p>{item.city}</p>
                     </div>) : (<></>)))}
                    
@@ -64,7 +114,10 @@ const RegQues = () => {
                     </div>
                     <div className='all-ans-reg'>
                     {company?.map((item) => ( 
-                    (item.company !== "Clear") ? (<div className="ans-reg">
+                    (item.company !== "Clear") ? (<div className="ans-reg" onClick={() => {
+                        setarrayOfCompany(oldArray => [...oldArray, item.company]);
+                        console.log(arrayOfCompany)
+                    }}>
                         <p>{item.company}</p>
                     </div>) : (<></>)))}
                    
@@ -75,7 +128,10 @@ const RegQues = () => {
                     </div>
                     <div className='all-ans-reg'>
                     {experience?.map((item) => ( 
-                    (item.experience !== "Clear") ? (<div className="ans-reg">
+                    (item.experience !== "Clear") ? (<div className="ans-reg" onClick={() => {
+                        setarrayOfExperience(oldArray => [...oldArray, item.experience]);
+                        console.log(arrayOfExperience)
+                    }}>
                         <p>{item.experience} Years</p>
                     </div>) : (<></>)))}
                    

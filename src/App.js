@@ -5,6 +5,8 @@ import Register from './Components/Register';
 import Login from './Components/Login';
 import DashboardCandidate from './Components/DashboardCandidate';
 import RegQues from './Components/RegQues';
+import Brl from './Components/brl';
+import Notification from './Components/Notification';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Routes } from 'react-router-dom';
 import { Route } from 'react-router-dom';
@@ -12,19 +14,21 @@ import { Route } from 'react-router-dom';
 function App() {
   return (
    <>
-   {/* <Router>
+   <Router>
     <Routes>
     <Route path='/' element={<HomePage/>} />
     <Route path='/register' element={<Register/>} />
     <Route path='/login' element={<Login/>} />
     <Route path='/DashboardCandidate' element={<DashboardCandidate/>} />
     <Route path='/RegQues' element={<RegQues/>} />
+    <Route path='/notification' element={<Notification />} />
 
     </Routes>
-   </Router> */}
-   <RegQues/>
+   </Router>
+   {/* <Login />
+   <RegQues/> */}
+   {/* <Brl /> */}
    
-   {/* <Sumit /> */}
    </>
   );
 }
