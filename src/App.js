@@ -5,7 +5,7 @@ import Register from './Components/Register';
 import Login from './Components/Login';
 import DashboardCandidate from './Components/DashboardCandidate';
 import RegQues from './Components/RegQues';
-import Brl from './Components/brl';
+
 import Notification from './Components/Notification';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Routes } from 'react-router-dom';
@@ -25,9 +25,8 @@ function App() {
 
     </Routes>
    </Router>
-   {/* <Login />
-   <RegQues/> */}
-   {/* <Brl /> */}
+   
+  
    
    </>
   );
