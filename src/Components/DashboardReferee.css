@@ -1,0 +1,62 @@
+.dashboard-referee-main{
+    border: 2px solid rgb(122, 122, 122);
+    border-radius: 10px;
+   margin-top: -1rem;
+    padding: 1rem;
+    width: 60rem;
+    margin-left: 10rem;
+}
+.job-desc-input{
+    margin-top: 2rem;
+    width: 50rem;
+    height: 10rem;
+    margin-left: 4rem;
+    font-size: 1.4rem;
+    border: 2px solid rgb(193, 113, 247);
+    border-radius: 10px;
+    padding: 0.5rem;
+    resize: none;
+    outline: none;
+}
+.post-btn{
+    height: 3.2rem;
+    width: 15rem;
+    color: white;
+    font-size: 1.1rem;
+    letter-spacing: 0.08rem;
+    background: rgb(193, 131, 235);
+    border: none;
+    border-radius: 12px;
+    margin-left: 22.05rem;
+}
+.post-btn:hover{
+    background: rgb(156, 57, 221);
+    color: white;
+    cursor: pointer;
+}
+.location-list,.domain-list,.company-list{
+    
+    position: absolute;
+    top: 29rem;
+    text-align: center;
+    z-index: 1;
+    color:black;
+    background: wheat;
+    border-radius: 10px;
+    height: 10rem;
+    overflow-y: scroll;
+}
+.noOfDays{
+    margin-top: 0.5rem;
+}
+.noOfDays label {
+    font-size: 1.3rem;
+    margin-left: 5rem;
+}
+.noOfDays input {
+    font-size: 1.1rem;
+    width: 5rem;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid rgb(193, 113, 247);
+}

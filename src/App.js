@@ -5,7 +5,7 @@ import Register from './Components/Register';
 import Login from './Components/Login';
 import DashboardCandidate from './Components/DashboardCandidate';
 import RegQues from './Components/RegQues';
-
+import DashboardReferee from './Components/DashboardReferee';
 import Notification from './Components/Notification';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Routes } from 'react-router-dom';
@@ -22,6 +22,7 @@ function App() {
     <Route path='/DashboardCandidate' element={<DashboardCandidate/>} />
     <Route path='/RegQues' element={<RegQues/>} />
     <Route path='/notification' element={<Notification />} />
+    <Route path='/DashboardReferee' element={<DashboardReferee />} />
 
     </Routes>
    </Router>

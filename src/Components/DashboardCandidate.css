@@ -20,6 +20,7 @@
 .filters{
     display: flex;
     justify-content: space-around;
+    
 }
 .all-opt-filter p , .location-filter-head,.domain-filter-head,.company-filter-head{
     border: 2px solid black;
@@ -29,10 +30,12 @@
     padding: 0.35rem;
     text-align: center;
     font-weight: 500;
+    
 }
 .location-list,.domain-list,.company-list{
-    top: 8rem;
+    
     position: absolute;
+    top: 8rem;
     text-align: center;
     z-index: 1;
     color:black;
