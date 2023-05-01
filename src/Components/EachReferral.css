@@ -1,0 +1,40 @@
+.each-ref-main{
+    display: flex;
+}
+.left-each-ref{
+    width: 70rem;
+    background: #cef5e3;
+}
+.right-each-ref{
+    width: 30rem;
+    background: rgb(248, 177, 248);
+    height: 36.3rem;
+}
+.company,.domain,.location{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.job-desc{
+    font-size: 1.45rem;
+    margin-left: 5rem;
+}
+.tot-fig-eachRef{
+    font-size: 1.45rem;
+}
+.reg-btn-eachReferral{
+    width: 12rem;
+    height: 2.8rem;
+    font-size: 1.3rem;
+    border: none;
+    outline: none;
+    background: rgb(210, 167, 245);
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+.reg-btn-eachReferral:hover{
+    background: rgb(166, 73, 243);
+    color: white;
+    cursor: pointer;
+}

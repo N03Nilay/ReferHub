@@ -7,6 +7,7 @@ import DashboardCandidate from './Components/DashboardCandidate';
 import RegQues from './Components/RegQues';
 import DashboardReferee from './Components/DashboardReferee';
 import Notification from './Components/Notification';
+import EachReferral from './Components/EachReferral';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Routes } from 'react-router-dom';
 import { Route } from 'react-router-dom';
@@ -23,6 +24,7 @@ function App() {
     <Route path='/RegQues' element={<RegQues/>} />
     <Route path='/notification' element={<Notification />} />
     <Route path='/DashboardReferee' element={<DashboardReferee />} />
+    <Route path='/EachReferral' element={<EachReferral />} />
 
     </Routes>
    </Router>

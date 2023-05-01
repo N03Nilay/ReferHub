@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {useFormik} from "formik";
+import './Login.css'
 // import { useNavigate } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 
@@ -79,7 +80,29 @@ else{
   });
   return (
     <div>
-        <h1>LOG IN</h1>
+    <div className="body-login">
+      <div className="header-login">
+        <div style={{ marginLeft: "1rem" }}>
+          <p className='close-sign'>&#10006;</p>
+        </div>
+        <div>
+          <p
+            style={{
+              fontWeight: "600",
+              fontSize: "1.1rem",
+              marginLeft: "12rem",
+            }}
+          >
+            Log in or sign up
+          </p>
+        </div>
+      </div>
+      <hr style={{ marginTop: "-0.5rem" }} />
+      <div className="main-login">
+        <p style={{ fontSize: "1.5rem", fontWeight: "500" }}>
+          Welcome to ReferHub
+        </p>
+
         <form className='form-create' onSubmit={handleSubmit}>
         <div className='email-heading'>
             <input type="email" name='email' id='email' placeholder='E-mail id' autoComplete='off'
@@ -96,20 +119,15 @@ else{
         onBlur={handleBlur}/><br />
         </div>
         <div style={{display:"flex"}}>
-          <div className="captcha">
-            {/* <ReCAPTCHA style={{transform:"scale(0.95)",transformOrigin:"0 0",marginLeft:"2rem",marginTop:"1rem"}}
-    sitekey="6Lf6JPIjAAAAANP9Fcj7qxku87LThyJ9HJ3Cjp_7"
-    onChange={(value) => {setcaptcha(true)}}
-  /> */}
-          </div>
           <div>
-        <button type='submit'  className="create-btn">Create</button>
+        <button type='submit'  className="continue-btn">Create</button>
         </div>
         </div>
         
       </form>
-
+      </div>
     </div>
+  </div>
   )
 }
 

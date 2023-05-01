@@ -171,6 +171,7 @@ const DashboardCandidate = () => {
                     console.log(config)
                 })
             }
+
     }
   return (
     <div>
@@ -326,7 +327,9 @@ const DashboardCandidate = () => {
                 <p>{item.job_description}</p>
                 </div>
                 <div className="apply-job-btn">
-                    <button>Apply Here</button>
+                    <button onClick={() => {
+                        navigate('/EachReferral',{state:{id:item.referral_id}})
+                    }}>Apply Here</button>
                 </div>
             </div>
             )})}
