@@ -16,6 +16,8 @@ const EachReferral = () => {
     const navigate = useNavigate()
     const id = location.state.id
     const [dataOfEachref,setdataOfEachref] = useState([])
+    const num = dataOfEachref.totalCandidatesApplied
+
     useEffect(() => {
         axios.get(`https://refer-hub.onrender.com/api/referral/getonereferral/${id}` , config)
                 .then((res) => {
@@ -54,12 +56,12 @@ const EachReferral = () => {
         </div>
         <div className="each-ref-main">
         <div className="left-each-ref">
-            <p style={{textAlign:"center",fontSize:"2rem",fontWeight:"400",letterSpacing:"0.05rem"}}>First Time Jobbers</p>
+            <p style={{textAlign:"center",fontSize:"2rem",fontWeight:"400",letterSpacing:"0.05rem"}}>{dataOfEachref.title}</p>
             <p className='job-desc'>{dataOfEachref.job_description}</p>
             <div className="buttons-eachReferral" style={{display:"flex",justifyContent:"space-around"}}>
                 <div className='tot-fig-eachRef'>
                     
-                        {(dataOfEachref.candidatesApplied === null) ? (<p style={{textAlign:"center",fontSize:"1.45rem"}}>0/650</p>) : (<p style={{textAlign:"center",fontSize:"1.45rem"}}>{dataOfEachref.candidatesApplied}/650</p>)}
+                        <p style={{textAlign:"center",fontSize:"1.45rem"}}>{num}/650</p>
                         
                     <p style={{fontSize:"1.2rem",marginTop:"-1.1rem",textAlign:"center",fontWeight:"500"}}>Registered Candidates</p>
 
