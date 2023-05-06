@@ -27,6 +27,7 @@ const DashboardReferee = () => {
     const [selectAll,setselectAll] = useState(0)
 
     const [jobDesc,setjobDesc] = useState("")
+    const [jobTitle,setjobTitle] = useState("")
     const [noOfDays,setnoOfDays] = useState(0)
   return (
     <div>
@@ -36,15 +37,20 @@ const DashboardReferee = () => {
                     <img src="ReferHub (1).png" alt="" />
                 </div>
                 <div className="Dash-nav-options">
+                <div className="nav-options-list">
+                        <p style={{fontSize:"1.1rem",fontWeight:"500"}} onClick={() => {
+                            navigate("/StatusReferre")
+                        }}>Status</p>
+                        </div>
                     <div className="nav-options-list">
-                        <img src="icon-of-blank-message-dialogue-box-free-vector-removebg-preview.png" height="40rem" width="40rem" alt=""style={{}} /></div>
+                        <img src="icon-of-blank-message-dialogue-box-free-vector-removebg-preview.png" height="40rem" width="40rem" alt=""style={{marginTop:"0.7rem"}} /></div>
                     <div className="nav-options-list">
-                        <img src="download-removebg-preview (1).png" height="22rem" width="22rem" alt="" style={{marginTop:"0.6rem"}} onClick={() => {
+                        <img src="download-removebg-preview (1).png" height="22rem" width="22rem" alt="" style={{marginTop:"1.3rem"}} onClick={() => {
                             navigate("/notification")
                         }} /></div>
                     <div className="nav-options-list" style={{display:"flex"}}>
-                        <img src="6522516-removebg-preview.png" height="30rem" width="30rem" style={{marginTop:"0.4rem"}} alt="" />
-                    <img src="free-arrow-down-icon-3101-thumb-removebg-preview.png" height="17rem" width="17rem" alt=""style={{marginTop:"0.85rem"}} />
+                        <img src="6522516-removebg-preview.png" height="30rem" width="30rem" style={{marginTop:"1.05rem"}} alt="" />
+                    <img src="free-arrow-down-icon-3101-thumb-removebg-preview.png" height="17rem" width="17rem" alt=""style={{marginTop:"1.5rem"}} />
                     </div>
                 </div>
             </div>
@@ -52,12 +58,15 @@ const DashboardReferee = () => {
         <p style={{fontSize:"2.4rem",fontWeight:"500",textAlign:"center",marginTop:"0.5rem"}}>Share a Job referral</p>
         <div className="dashboard-referee-main">
             <div>
+            <div className="job-title">
+                <textarea name="" id="" cols="30" rows="10" placeholder='Tell your Job Title' value={jobTitle} className='job-title-input-dash-ref' onChange={e => setjobTitle(e.target.value)}></textarea>
+                </div>
                 <div className="job-desc">
-                <textarea name="" id="" cols="30" rows="10" placeholder='Start a Post' value={jobDesc} className='job-desc-input' onChange={e => setjobDesc(e.target.value)}></textarea>
+                <textarea name="" id="" cols="30" rows="10" placeholder='Share the Job Description' value={jobDesc} className='job-desc-input-dash-ref' onChange={e => setjobDesc(e.target.value)}></textarea>
                 </div>
                 <div className="noOfDays">
                     <label htmlFor="numberOfDays">Job Post is availbable for : </label>
-                    <input type="number" name='numberOfDays' placeholder='30 days' onChange={e => setnoOfDays(e.target.value)} value={noOfDays} />
+                    <input type="number" name='numberOfDays' placeholder='30 days' onChange={e => setnoOfDays(e.target.value)} value={noOfDays} /> <span style={{marginLeft:"0.2rem",fontSize:"1.2rem"}}>days</span>
                 </div>
                 <div className="filters" style={{marginTop:"0rem",width:"50rem",marginLeft:"4.5rem"}}>
             
@@ -72,7 +81,7 @@ const DashboardReferee = () => {
                 setshowLocationList(0)
             }}  />)}</div>
             </div>
-            {(showLocationList === 1) ? (<div className="location-list">
+            {(showLocationList === 1) ? (<div className="location-list-ref">
             {city?.map((item) => (
             <div key={item.id}>
                 {(item.city !== "Clear") ? 
@@ -98,7 +107,7 @@ const DashboardReferee = () => {
                 
             }}  />)}</div>
             </div>
-            {(showDomainList === 1) ? (<div className="domain-list">
+            {(showDomainList === 1) ? (<div className="domain-list-ref">
             {domain?.map((item) => (
             <div key={item.id}>
               {(item.domain !== "Clear") ? (<p className='loc-comp-dom-name' style={{textAlign:"center",fontSize:"1.3rem"}} onClick={() => {
@@ -123,7 +132,7 @@ const DashboardReferee = () => {
                 setshowCompanyList(0)
             }}  />)}</div>
             </div>
-            {(showCompanyList === 1) ? (<div className="company-list">
+            {(showCompanyList === 1) ? (<div className="company-list-ref">
             {company?.map((item) => (
             <div key={item.id}>
               {(item.company !== "Clear") ? (<p className='loc-comp-dom-name' style={{fontSize:"1.3rem"}} onClick={() => {
@@ -144,6 +153,7 @@ const DashboardReferee = () => {
                 location:stateName,
                 company:companyName,
                 domain:domainName,
+                job_title: jobTitle,
                 job_description: jobDesc,
                 endDate:noOfDays,
               }

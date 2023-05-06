@@ -18,10 +18,10 @@ const Notification = () => {
     useEffect(() => {
         axios.get("https://refer-hub.onrender.com/api/candidate/getdetails" , config)
                 .then((res) => {
-                    // console.log(res)
+                    console.log(res)
                     // console.log(config)
-                    setnotification(res.data.userDetails.notification)
-                    console.log(res.data.userDetails.notification)
+                    // setnotification(res.data.userDetails.notification)
+                    // console.log(res.data.userDetails.notification)
                 })
                 .catch((err) => {
                     console.log(err)

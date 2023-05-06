@@ -6,11 +6,23 @@
     width: 60rem;
     margin-left: 10rem;
 }
-.job-desc-input{
-    margin-top: 2rem;
+.job-title-input-dash-ref{
+    margin-top: 1rem;
+    width: 50rem;
+    height: 2rem;
+    margin-left: 4rem;
+    font-size: 1.4rem;
+    border: 2px solid rgb(193, 113, 247);
+    border-radius: 10px;
+    padding: 0.5rem;
+    resize: none;
+    outline: none;
+}
+.job-desc-input-dash-ref{
+    margin-top: 0.5rem;
     width: 50rem;
     height: 10rem;
-    margin-left: 4rem;
+    margin-left: -5rem;
     font-size: 1.4rem;
     border: 2px solid rgb(193, 113, 247);
     border-radius: 10px;
@@ -34,10 +46,10 @@
     color: white;
     cursor: pointer;
 }
-.location-list,.domain-list,.company-list{
+.location-list-ref,.domain-list-ref,.company-list-ref{
     
     position: absolute;
-    top: 29rem;
+    top: 34.5rem;
     text-align: center;
     z-index: 1;
     color:black;
